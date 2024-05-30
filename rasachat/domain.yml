@@ -1,0 +1,104 @@
+
+
+version: "3.1"
+
+intents:
+  - ihiubhj
+  - greet
+  - goodbye
+  - coffe_shop_opening_time
+  - coffe_shop_menu
+  - coffe_shop_gluten_free
+  - pharmacy_ask_for_Lisinopril
+  - pharmacy_opening_time
+  - set_domain
+  - bot_challenge
+  - continue_chat
+  - request_human_handoff
+  - greety
+
+entities:
+  - medication_name
+  - prescription_id
+  - location 
+  - coffee_type
+  - size
+  - milk_type
+  - food_item
+  - domain
+  - city
+  - inquiry_type
+
+slots:
+  active_domain:
+    type: categorical
+    values:
+      - pharmacy
+      - coffee_shop
+    mappings:
+      - type: from_intent
+        value: pharmacy
+        intent: set_domain
+      - type: from_intent
+        value: coffee_shop
+        intent: set_domain 
+        
+
+actions:
+  - action_ask_domain
+  - action_set_domain
+  - action_handle_human_handoff
+  - action_fallback
+  
+responses:
+  utter_ihiubhj: 
+  - text: "yguv"
+  utter_city:
+    - text: "Which city are you in? Jeddah or Riyadh?"
+
+
+
+  utter_greet:
+    - text: "Hello! How can I assist you today?"
+  utter_ask_domain:
+    - text: "How can I help you today?"
+  utter_goodbye:
+    - text: "see you later"
+
+
+  utter_coffe_shop_opening_time:
+    - text: "We open at 7:00 AM sharp every morning."
+    - text: "Our doors unlock bright and early at 7:00 AM for all you coffee enthusiasts."
+    - text: "We're open at 7:00 AM every day of the week."
+    - text: "Our operating hours commence promptly at 7:00 AM each morning."
+
+  utter_coffe_shop_menu:
+    - text: "Here's our menu, take your time to browse through it. We have classics like Espresso, Cappuccino, and Latte, as well as specialty drinks like our signature Mocha Madness."
+    - text: "Sure thing, our menu showcases a variety of beverages and snacks. Please have a look. We offer a range of options including our popular Caramel Macchiato, Iced Americano, and Raspberry White Mocha."
+    - text: "Of course! Here's our menu; let me know if you have any questions about our offerings. We've got all your favorites like the Classic Drip Coffee, Cold Brew, and our refreshing Green Tea Lemonade."
+    - text: "Certainly, here's a copy of our menu for your perusal. You'll find a selection of our finest beverages such as the Mocha Latte, Hazelnut Frappuccino, and our specialty Matcha Latte."
+
+  utter_coffe_shop_gluten_free:
+    - text: "Yes, we have gluten-free muffins and our almond milk is gluten-free too."
+    - text: "Indeed, we do have gluten-free options available, including our gluten-free muffins and almond milk."
+    - text: "Absolutely! Our gluten-free options include delicious muffins and almond milk."
+    - text: "Yes, we offer gluten-free alternatives such as our muffins and almond milk to accommodate dietary preferences"
+
+  utter_pharmacy_ask_for_Lisinopril:
+    - text: "Lisinopril is prescribed to treat high blood pressure. It works by relaxing blood vessels so blood can flow more easily."
+    - text : "Sure, Lisinopril is for high blood pressure and heart failure."
+    - text: "Lisinopril is for when your heart and blood pressure need some help."
+
+  utter_pharmacy_opening_time:
+    - text: "Yes, we're open until 10:00 PM."
+    - text : "We stay open until 10:00 PM every night."
+    - text: "Yep, we're here until 10:00 PM if you need anything."
+ 
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+

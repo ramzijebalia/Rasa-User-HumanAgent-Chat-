@@ -1,0 +1,39 @@
+version: "3.1"
+
+stories:
+- story: story_Chat_com1
+  steps:
+  - intent: greet
+  - action: action_ask_domain
+  - slot_was_set:
+      - active_domain: pharmacy
+  - intent: pharmacy_ask_for_Lisinopril
+  - action: utter_pharmacy_ask_for_Lisinopril
+  - intent: pharmacy_opening_time
+  - action: utter_pharmacy_opening_time
+
+
+- story: story_Chat_com2
+  steps:
+  - intent: greet
+  - action: action_ask_domain
+  - slot_was_set:
+      - active_domain: coffee_shop
+  - intent: coffe_shop_menu
+  - action: utter_coffe_shop_menu
+  - intent: coffe_shop_opening_time
+  - action: utter_coffe_shop_opening_time
+  - intent: coffe_shop_gluten_free
+  - action: utter_coffe_shop_gluten_free
+
+- story: User requests human handoff
+  steps:
+  - intent: request_human_handoff
+  - action: action_handle_human_handoff
+
+- story: User continues chatting with the bot
+  steps:
+  - intent: continue_chat
+  - action: action_fallback
+
+

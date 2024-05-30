@@ -1,0 +1,102 @@
+version: "3.1"
+
+nlu:
+
+- intent: greety
+  examples: |
+    - lala
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+
+- intent: coffe_shop_menu
+  examples: |
+    - Can I see your menu, please?
+    - What do you have on the menu?
+    - What are the drink options you offer?
+
+- intent: coffe_shop_opening_time
+  examples: |
+    - What time do you open in the morning?
+    - Could you tell me your morning opening hours?
+    - When do you open?
+
+
+- intent: coffe_shop_gluten_free
+  examples: |
+    - Do you have any gluten-free options?
+    - Are there any gluten-free items on the menu?
+    - Can you tell me which items are gluten-free?
+
+
+
+- intent: pharmacy_ask_for_Lisinopril
+  examples: |
+    - Can you tell me about Lisinopril?
+    - I'd like to know more about Lisinopril, please.
+    - Hey, what's Lisinopril used for?
+
+- intent: pharmacy_opening_time
+  examples: |
+    - Do you have nighttime hours?
+    - Are you open late in the evening?
+    - Do you guys stay open late?
+
+
+- intent: coffe_shop_gluten_free
+  examples: |
+    - Do you have any gluten-free options?
+    - Are there any gluten-free items on the menu?
+    - Can you tell me which items are gluten-free?
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+
+- intent: set_domain
+  examples: |
+    - /set_domain{"domain": "pharmacy"}
+    - /set_domain{"domain": "coffee_shop"}
+
+
+
+- intent: request_human_handoff
+  examples: |
+    - /request_human_handoff
+
+- intent: continue_chat
+  examples: |
+    - /continue_chat
+
+  
