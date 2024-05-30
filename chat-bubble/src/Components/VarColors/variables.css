@@ -1,0 +1,42 @@
+
+:root {
+  /* main color of the chat bubble [ user-message-bubble , chat-hedaer ] */
+    --chat-bubble-bg-start: #6660d6;
+    --chat-bubble-bg-mid: #a9dc52;
+    --chat-bubble-bg-end: #00d4ff;
+
+  /* color of the  bot message buubble */
+  --chat-background-color: #fff;
+  
+
+  /* color of the  bot message buubble */
+    --bot-message-bubble-color: #E5E5EA;
+
+  /* color of the human agnet bubble*/
+    --human-message-bubble-color: #C7D8ED;
+
+  /* color of the user bubble*/
+    --user-message-bubble-color: #f7f7f7;
+
+  /* color of the text messages (userand bot) */
+    --user-bot-message-text-color: #000000;
+
+  /* color of the  chat-icon::hover */
+    --chat-icon-hover-color: #007bff;
+
+  /* color of the chat-window border */
+    --chat-window-border-color: #007bff;
+
+  /* color of the chat-window ( input and button) */
+    --chat-window-color: #007bff;
+
+  /* color of the form container */
+   --form-container-color: #0a5db5;
+
+  /* color of the user info form */
+  --form-userInfo-color: #007bff;
+
+  /* color of the font ( header , form container , user form button */
+  --form-container-text-color: #fff;
+  }
+  

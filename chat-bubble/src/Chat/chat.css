@@ -1,0 +1,289 @@
+@import url('../Components/VarColors/variables.css');
+
+.chat-icon-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.chat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, var(--chat-bubble-bg-start) 0%, var(--chat-bubble-bg-mid) 44%, var(--chat-bubble-bg-end) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.chat-icon:hover {
+    background-color: var(--chat-icon-hover-color);
+}
+
+
+.chat-window {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    width: 350px;
+    height: 600px;
+    background-color: var(--chat-background-color);
+    border: 1px solid var(--chat-window-border-color); /* Change border color to blue */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 9998;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* To position content at the bottom */
+}
+/* Hide scrollbar for WebKit browsers */
+.chat-window::-webkit-scrollbar {
+    display: none;
+}
+
+.chat-header {
+    /*background: rgb(2,0,36);*/
+    background: linear-gradient(90deg, var(--chat-bubble-bg-start) 0%, var(--chat-bubble-bg-mid) 44%, var(--chat-bubble-bg-end) 100%);
+    color:var(--form-container-text-color);
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*position: fixed;*/
+    height: 100px;
+    width: 330px;
+}
+
+
+.chat-header h2 {
+    margin: 30px;
+}
+
+.close-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.close-btn:hover {
+    color: #eee;
+}
+
+
+.chat-window form {
+    display: flex;
+    align-items: center;
+    margin-top: auto; /* Push form to the bottom */
+    padding: 10px;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* CSS for Chat Component */
+.message-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: -20px;
+    padding: 15px;
+}
+
+#messageArea {
+    flex: 1; /* Allow message area to grow and take up available space */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Hide scrollbar for WebKit browsers */
+#messageArea::-webkit-scrollbar {
+    display: none;
+}
+
+.bot-message-container {
+    justify-content: flex-start;
+}
+
+.human-agent-message-container {
+    justify-content: flex-start;
+}
+
+.message-bubble {
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%; 
+    word-wrap: break-word;
+}
+
+.user-message-bubble {
+    background: linear-gradient(90deg, var(--chat-bubble-bg-start) 0%, var(--chat-bubble-bg-mid) 44%, var(--chat-bubble-bg-end) 100%); /* Light green color for user messages */
+    text-align: right; /* Right-align user messages */
+}
+
+.bot-message-bubble {
+    background-color: var(--bot-message-bubble-color); /* Light gray color for bot messages */
+    text-align: left; /* Left-align bot messages */
+}
+
+.human-agent-message-bubble {
+    background-color: var(--human-message-bubble-color); /* Light blue color for human agent messages */
+    text-align: left; /* Left-align human agent messages */
+}
+
+.user-message-bubble h5 { 
+    margin: 0;
+    color: var(--user-message-bubble-color);
+}
+.bot-message-bubble h5 , .human-agent-message-bubble h5 {
+    margin: 0;
+    color: var(--user-bot-message-text-color);;
+}
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+.message {
+    margin-bottom: 10px;
+    max-width: calc(100% - 20px); /* Set maximum width to 100% of the container minus padding */
+    word-wrap: break-word; /* Allow long words to break and wrap onto the next line */
+}
+
+
+.bot-message {
+    text-align: left;
+}
+
+.user-message {
+    text-align: right;
+}
+
+
+
+.chat-window input[type="text"] {
+    flex: 1;
+    border: 1px solid var(--chat-window-color); /* Change border color to blue */
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 10px;
+    
+}
+
+
+
+.chat-window button {
+    background-color: var(--chat-window-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+
+/* Update chat.css */
+
+.form-container {
+    max-width: 300px;
+    margin: 0 auto;
+    
+    
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="tel"],
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--form-container-color); /* Blue border */
+    border-radius: 5px; /* Rounded corners */
+    box-sizing: border-box;
+    height: 40px; /* Set the same height for all input fields and button */
+}
+
+
+.form-container button {
+    background-color: var(--form-container-color);
+    color: var(--form-container-text-color);
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: var(--form-container-color);
+}
+
+
+
+/* css for the user information form ; */
+.user-info-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    margin-right: 5px;
+  }
+  
+  input[type='text'],
+  input[type='email'],
+  input[type='tel'],
+  button {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    background-color: var(--form-userInfo-color);
+    color: var(--form-container-text-color);
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: var(--form-userInfo-color);
+  }
+  
+
+
+
+  .city-selection,
+.inquiry-type-selection {
+  display: flex; /* Arrange buttons horizontally */
+}
+
+.city-selection button,
+.inquiry-type-selection button {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  margin-right: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.city-selection button.selected,
+.inquiry-type-selection button.selected {
+  /* Style for chosen button: blue outline */
+  outline: 2px solid blue;
+  outline-offset: -2px;
+}
